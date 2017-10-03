@@ -1,14 +1,4 @@
 {
-  "presets": ["env", "react"],
-  "plugins": [
-    "transform-object-rest-spread",
-    [
-      "transform-async-to-generator",
-      {
-        "helpers": false,
-        "polyfill": false,
-        "regenerator": true
-      }
-    ]
-  ]
+  "presets": [["env", { "es2015": { "modules": false } }], "stage-2", "react"],
+  "plugins": ["react-hot-loader/babel"]
 }
