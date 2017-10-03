@@ -1,0 +1,16 @@
+{
+  "name": "lifebook",
+  "version": "0.0.0",
+  "description": "capture your book of life",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@makesitgo.github.com:makesitgo/lifebook.git"
+  },
+  "keywords": [],
+  "author": "nick makes",
+  "license": "ISC"
+}
