@@ -1,3 +1,11 @@
+### todo list
+- [ ] add redux and theme picker
+- [ ] add testing framework (jest)
+- [ ] add react router
+- [ ] add login/logout/home cycle
+
+---
+
 lifebook
 ---
 
@@ -32,4 +40,4 @@ step | command
 clone | `git clone git@makesitgo.github.com:makesitgo/lifebook.git`
 view | `cd lifebook/`
 install | `npm install`
-compile | `npm run compile`
+start | `npm start`
