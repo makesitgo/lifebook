@@ -36,6 +36,7 @@ module.exports = {
     port: 8001,
     historyApiFallback: true, // respond to 404s with index.html
     hot: true, // enable HMR on the server
+    progress: true, // show compilation progress
     open: true // launch the browser after start
   }
 };
