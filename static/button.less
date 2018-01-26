@@ -1,0 +1,59 @@
+.Button {
+  padding: 8px 16px;
+  background: @brand-blue;
+  border-bottom: @brand-blue-border 3px solid;
+  border-left: @brand-blue-border 1px solid;
+  border-right: @brand-blue-border 1px solid;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    padding: 8px 16px;
+    background: darken(@brand-blue, 10%);
+    border-bottom: @brand-blue-border 1px solid;
+    border-left: @brand-blue-border 1px solid;
+    border-right: @brand-blue-border 1px solid;
+    border-radius: 6px;
+    margin-top: 3px;
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &-Small-Dropdown {
+    font-size: 0.9em;
+    padding: 4px 8px;
+  }
+
+  &-Smaller-Dropdown {
+    font-size: 0.7em;
+    padding: 2px 4px;
+  }
+
+  &-Small {
+    padding: 4px 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: lowercase;
+  }
+
+  &-Large {
+    font-size: 1.3em;
+  }
+
+  &-Disabled, &-Disabled:focus {
+    pointer-events: none;
+    background-color: @brand-dk-blue;
+    border-bottom: @brand-dk-blue-border 1px solid;
+    border-left: @brand-dk-blue-border 1px solid;
+    border-right: @brand-dk-blue-border 1px solid;
+  }
+}

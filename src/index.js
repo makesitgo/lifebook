@@ -1,25 +1,26 @@
-/* global document */
-/* eslint import/no-extraneous-dependencies: ["error", {}] */
 import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-// app imports
-import App from 'containers/App';
+import { Provider } from 'react-redux';
+import Bootstrapper from 'bootstrapper';
+import ViewRouter from 'view/router';
 
-const rootElement = document.getElementById('root');
+require('../static/favicon.ico');
+require('../static/index.less');
 
-const render = Component =>
+const bootstrapper = new Bootstrapper(process.env.NODE_ENV, window.settings);
+
+const render = (Component) =>
   ReactDom.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    rootElement,
-  );
+    <Provider store={bootstrapper.store}>
+      <AppContainer>
+        <Component history={bootstrapper.history} />
+      </AppContainer>
+    </Provider>,
+    document.getElementById('root'));
 
-render(App);
+render(ViewRouter);
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    render(App);
-  });
+  module.hot.accept('./view/router', () =>  render(ViewRouter));
 }

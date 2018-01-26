@@ -23,13 +23,53 @@ module.exports = {
         test: /\.jsx?$/,
         use: ['babel-loader'],
         exclude: /node_modules/
+      },
+      {
+        test: /\.svg/,
+        loader: ['svg-url-loader']
+      },
+      {
+        test: /.(png|jpg|jpeg|gif|woff|woff2|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[hash].[ext]',
+              limit: 10000,
+            }
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader?sourceMap=true" },
+          { loader: "less-loader?sourceMap=true" }
+        ]
+      },
+      {
+        test: /favicon\.ico$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // enable HMR globally
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-    new webpack.NoEmitOnErrorsPlugin() // do not emit compiled assets that include errors
+    new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors
+    new webpack.DefinePlugin({
+      'process.env' : {
+        'NODE_ENV': JSON.stringify('')
+      }
+    })
   ],
   devServer: {
     host: '0.0.0.0',
@@ -37,6 +77,5 @@ module.exports = {
     historyApiFallback: true, // respond to 404s with index.html
     hot: true, // enable HMR on the server
     progress: true, // show compilation progress
-    open: true // launch the browser after start
   }
 };

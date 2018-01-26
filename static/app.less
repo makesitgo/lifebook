@@ -1,0 +1,60 @@
+.App {
+  background-color: @background;
+  color: @text;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  &-Navbar {
+    height: 62px;
+    border-bottom: 4px double @gray-4;
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &-Lhs {
+      flex-basis: 30%;
+      display: flex;
+    }
+
+    &-Logo {
+      flex-basis: 40%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &-Rhs {
+      flex-basis: 30%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-Item {
+      cursor: pointer;
+      padding: 0 16px;
+
+      a {
+        color: @text;
+
+        &.active {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &-Main {
+    flex-grow: 1;
+  }
+
+  &-StatusBar {
+    border-top: 1px solid @gray-4;
+    height: 38px;
+    padding: 1em;
+    font-size: 0.6em;
+  }
+}

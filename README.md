@@ -1,8 +1,8 @@
 ### todo list
-- [ ] add redux and theme picker
-- [ ] add testing framework (jest)
-- [ ] add react router
-- [ ] add login/logout/home cycle
+- [x] add redux and theme picker
+- [x] add testing framework (jest)
+- [x] add react router
+- [x] add login/logout/home cycle
 - [ ] leverage auto-generated bundle hash names (and use webpack plugin to insert into html)
 - [ ] look into using OccurrenceOrderPlugin
 - [ ] look into using HotModuleReplacementPlugin
