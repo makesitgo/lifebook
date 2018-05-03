@@ -1,14 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 
 const buttonClass = 'Button';
 const buttonStyles = ['Small', 'Large', 'Disabled'];
 
-const Button = (props) => {
+interface ButtonProps {
+  className?: string
+  Small?: boolean
+  Large?: boolean
+  Disabled?: boolean
+  [key: string]: any
+}
+
+interface NewButtonProps extends ButtonProps {
+  className: string
+}
+
+export const Button: React.SFC<ButtonProps> = (props) => {
   const { className: originalClasses } = props;
 
-  const newProps = {
+  const newProps: NewButtonProps = {
     ...props,
     className: classNames(
       buttonClass,
@@ -28,17 +40,8 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes = {
-  className: PropTypes.string,
-  Small: PropTypes.bool,
-  Large: PropTypes.bool,
-  Disabled: PropTypes.bool,
-};
-
 Button.defaultProps = {
   Small: false,
   Large: false,
   Disabled: false,
 };
-
-export default Button;

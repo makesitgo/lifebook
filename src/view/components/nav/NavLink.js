@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink as ReactNavLink } from 'react-router-dom';
-import { FaIcon } from 'view/components';
+import { FontAwesome } from 'view/components';
 
 const NavLink = ({
   exact,
@@ -14,7 +14,7 @@ const NavLink = ({
     <div className="App-Navbar-Item">
       <ReactNavLink exact={!!exact} to={target}>
         {fontAwesomeOptions && (
-          <FaIcon size={faSize} icon={faIcon} />
+          <FontAwesome size={faSize} icon={faIcon} />
         )}
         {label && (
           <span>{label}</span>

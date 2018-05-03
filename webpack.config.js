@@ -13,16 +13,22 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/static/'
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.ts', '.tsx']
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: ['babel-loader'],
+        test: /\.(t|j)sx?$/,
+        use: ['awesome-typescript-loader'],
         exclude: /node_modules/
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
       },
       {
         test: /\.svg/,
@@ -35,7 +41,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               name: '[hash].[ext]',
-              limit: 10000,
+              limit: 10000
             }
           }
         ]
@@ -43,9 +49,9 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader?sourceMap=true" },
-          { loader: "less-loader?sourceMap=true" }
+          { loader: 'style-loader' },
+          { loader: 'css-loader?sourceMap=true' },
+          { loader: 'less-loader?sourceMap=true' }
         ]
       },
       {
@@ -66,8 +72,8 @@ module.exports = {
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
     new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors
     new webpack.DefinePlugin({
-      'process.env' : {
-        'NODE_ENV': JSON.stringify('')
+      'process.env': {
+        NODE_ENV: JSON.stringify('')
       }
     })
   ],
@@ -76,6 +82,6 @@ module.exports = {
     port: 8001,
     historyApiFallback: true, // respond to 404s with index.html
     hot: true, // enable HMR on the server
-    progress: true, // show compilation progress
+    progress: true // show compilation progress
   }
 };

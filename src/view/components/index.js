@@ -6,7 +6,7 @@ import Register from './auth/Register';
 import UserProfile from './auth/UserProfile';
 
 import Button from './core/Button';
-import FaIcon from './core/FaIcon';
+import FontAwesome from './core/FontAwesome';
 
 import ErrorBoundary from './errors/ErrorBoundary';
 
@@ -25,7 +25,7 @@ export {
   Register,
   UserProfile,
   Button,
-  FaIcon,
+  FontAwesome,
   ErrorBoundary,
   Footer,
   Home,

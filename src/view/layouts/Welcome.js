@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux';
-import { Button, FaIcon } from 'view/components';
+import { Button, FontAwesome } from 'view/components';
 import { siteUrls } from 'view/urls';
 
 class Welcome extends Component {
@@ -17,7 +17,7 @@ class Welcome extends Component {
         <div className="Welcome-Pane">
           <h2>login</h2>
           <Button className="Welcome-Login" onClick={gotoLogin}>
-            <FaIcon icon="sign-in" />login...
+            <FontAwesome icon="sign-in" />login...
           </Button>
         </div>
         <div className="Welcome-Pane">

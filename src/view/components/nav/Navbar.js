@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, FaIcon, NavLink } from 'view/components';
+import { Dropdown, FontAwesome, NavLink } from 'view/components';
 import { siteUrls } from 'view/urls';
 
 class Navbar extends Component {

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   About,
-  FaIcon,
+  FontAwesome,
   Footer,
   Home,
   Navbar,

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink as ReactNavLink } from 'react-router-dom';
-import { FaIcon } from 'view/components';
+import { FontAwesome } from 'view/components';
 
 const NavButton = ({ onClick, fontAwesomeOptions = {} }) => {
   const { size: faSize, icon: faIcon } = fontAwesomeOptions;
   return (
     <div className="App-Navbar-Item" onClick={onClick}>
         {fontAwesomeOptions && (
-          <FaIcon size={faSize} icon={faIcon} />
+          <FontAwesome size={faSize} icon={faIcon} />
         )}
     </div>
   );
