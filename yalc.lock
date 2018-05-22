@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "reqres-client": {
+      "signature": "96c482b27f52859561aa17c429b41294",
+      "file": true
+    }
+  }
+}
